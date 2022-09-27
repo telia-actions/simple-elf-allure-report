@@ -49,6 +49,10 @@ inputs:
     description: 'Use a custom URL instead of *.github.io'
     required: false
     default: ''
+  test_env_name:
+    description: 'Test environment name'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
