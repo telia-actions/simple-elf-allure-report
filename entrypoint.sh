@@ -56,7 +56,7 @@ mv ./executor.json ./${INPUT_ALLURE_RESULTS}
 #environment.properties
 echo "URL=${GITHUB_PAGES_WEBSITE_URL}" >> ./${INPUT_ALLURE_RESULTS}/environment.properties
 if [[ ${INPUT_TEST_ENV_NAME} != '' ]]; then
-  echo "ENV_NAME=test" >> ./${INPUT_ALLURE_RESULTS}/environment.properties
+  echo "ENV_NAME=${INPUT_TEST_ENV_NAME}" >> ./${INPUT_ALLURE_RESULTS}/environment.properties
 fi
 
 echo "keep allure history from ${INPUT_GH_PAGES}/last-history to ${INPUT_ALLURE_RESULTS}/history"
