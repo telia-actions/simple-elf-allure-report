@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM common-dockerhub-remote.jfrog.teliacompany.io/openjdk:8-jre-alpine
 
 ARG RELEASE=2.18.1
 ARG ALLURE_REPO=https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline
