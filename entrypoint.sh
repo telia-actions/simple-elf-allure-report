@@ -35,7 +35,7 @@ if (( COUNT > INPUT_KEEP_REPORTS )); then
   echo "remove index.html last-history"
   rm index.html last-history -rv
   echo "remove old reports"
-  ls | sort -n | head -n -$((${INPUT_KEEP_REPORTS}-2)) | xargs rm -rv;
+  ls **/index.html | xargs -i sh -c 'echo "$(git log -1 --pretty='%ad' --date=format:'%Y-%m-%dT%H:%M:%S' -- {}) {}"' | sort -u | head -n -$((${INPUT_KEEP_REPORTS}-2)) | awk -F '[ /]' '{print $2}' | xargs rm -rv;
   cd ${GITHUB_WORKSPACE}
 fi
 
